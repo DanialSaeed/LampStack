@@ -1,12 +1,12 @@
 # Setup LAMP Stack
-- hosts: 192.168.0.250
+- hosts: 192.168.217.129
   tasks:
     - name: install lamp stack
       become: yes
       become_user: root
       yum:
         pkg:
-          - httpd
+          - apache2
           - mariadb-server
           - php
           - php-mysql
@@ -17,7 +17,7 @@
       become: yes
       become_user: root
       service:
-        name: httpd
+        name: apache2
         state: started
         enabled: yes
 
